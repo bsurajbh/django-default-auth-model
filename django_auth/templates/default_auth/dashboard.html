@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+{% if request.user.is_authenticated %}
+<h1>Congratulations!! You are now logged In dear {{request.user.username}} </h1>
+<div class="">
+<button type="button" name="button"><a href="{% url 'default_auth:logout' %}">Logout</a></button>
+</div>
+{% else %}
+<h1>You Are Not logged in. Access Denied</h1>
+{%endif%}
+  </body>
+</html>
